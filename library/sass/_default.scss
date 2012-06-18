@@ -1,0 +1,163 @@
+/******************************************************************
+COMMON & REUSABLE STYLES
+******************************************************************/
+
+/* floats */
+.left { float: left; }
+.right { float: right; }
+
+/* text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Columns */
+.one-half { width: 49%; }
+.one-third { width: 32.66%; }
+.two-third { width: 65.33%; }
+.one-fourth { width: 24.5%; }
+.three-fourth { width: 74%; }
+.one-fifth { width: 16.8%; }
+.two-fifth { width: 37.6%; }
+.three-fifth { width: 58.4%; }
+.four-fifth { width: 67.2%; }
+.one-sixth { width: 13.33%; }
+.five-sixth { width: 82.67%; }
+
+.one-half,
+.one-third,
+.two-third,
+.three-fourth,
+.one-fourth,
+.one-fifth,
+.two-fifth,
+.three-fifth,
+.four-fifth,
+.one-sixth,
+.five-sixth {
+	position: relative;
+	margin-right: 1%;
+	float: left;
+}
+
+.column-last { margin-right: 0 !important; clear: right; }
+
+/******************************************************************
+GENERAL STYLES
+******************************************************************/
+body {  }
+
+#container {  }
+
+#inner-header, #content { width: 80%; margin: 0 auto; }
+
+/******************************************************************
+LINK STYLES
+******************************************************************/
+
+a, a:active, a:visited { color: $link-color; text-decoration: none; }
+a:hover { color: $link-hover-color; text-decoration: underline; }
+
+/******************************************************************
+H1, H2, H3, H4, H5, H6 STYLES
+******************************************************************/
+#{headers()} {
+	color: $header-color;
+}
+
+/******************************************************************
+HEADER STYLES
+******************************************************************/
+$header-h: 92px;
+
+#site-header {  }
+
+#inner-header { position: relative; }
+
+#navigation ul.menu {
+	float: right;
+	line-height: $header-h - 1;
+	text-transform: uppercase;
+	font-size: 13px;
+	color: white;
+	
+	> li {
+		$top-margin: 20px;
+		$item-spacing: 52px;
+		 
+		position: relative;
+		display: block;
+		float: left;
+		margin: $top-margin 0 0 $item-spacing;
+		
+		&:first-child { margin-left: 0; }
+		
+		a {
+			color: inherit;
+			text-shadow: 0 -1px 1px black;
+			text-align: center;
+			
+			&:hover { text-decoration: none; }
+		}
+		
+		&.current-menu-item a:before {
+			
+		}
+	}
+}
+
+#logo {
+	float: left;
+}
+	
+/******************************************************************
+NAVIGATION STYLES
+******************************************************************/
+
+	
+/******************************************************************
+POST STYLES
+******************************************************************/
+
+article[id*=post-] {
+	.post_content {
+		p { margin: 0 0 27px; }
+		ul, ol { margin: 0 0 27px; }
+		li { list-style-position: outside; padding-left: 0.4em; margin-left: 1em;  }
+		
+		/* image alignment & styles */
+		img { 
+			.alignleft { margin-right: 28px; display: inline; float: left; }
+			.alignright { margin-left: 28px; display: inline; float: right; }
+			.aligncenter { margin-right: auto; margin-left: auto; display: block; clear: both; }
+		}
+		
+		/* wp caption styles */
+		.wp-caption { margin-bottom: 28px; text-align: center; padding-top: 5px; }
+		.wp-caption img { border: 0 none; padding: 0; margin: 0; }
+		.wp-caption p.wp-caption-text { font-size:.8em; font-style:italic; margin:.6em 0 -.2em; }
+		
+		/* misc styles */
+		.wp-smiley { margin: 0 !important; max-height: 1em; }
+	}
+}
+
+/******************************************************************
+SIDEBAR STYLES
+******************************************************************/
+
+#main-sidebar {
+	
+}
+
+/******************************************************************
+COMMENT STYLES
+******************************************************************/
+
+/******************************************************************
+FORM STYLES
+******************************************************************/
+
+/******************************************************************
+OTHER STYLES
+******************************************************************/
