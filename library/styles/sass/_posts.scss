@@ -1,0 +1,26 @@
+/******************************************************************
+POST STYLES
+******************************************************************/
+
+article[id*=post-] {
+	.post_content {
+		p { margin: 0 0 27px; }
+		ul, ol { margin: 0 0 27px; }
+		li { list-style-position: outside; padding-left: 0.4em; margin-left: 1em;  }
+		
+		/* image alignment & styles */
+		img { 
+			.alignleft { margin-right: 28px; display: inline; float: left; }
+			.alignright { margin-left: 28px; display: inline; float: right; }
+			.aligncenter { margin-right: auto; margin-left: auto; display: block; clear: both; }
+		}
+		
+		/* wp caption styles */
+		.wp-caption { margin-bottom: 28px; text-align: center; padding-top: 5px; }
+		.wp-caption img { border: 0 none; padding: 0; margin: 0; }
+		.wp-caption p.wp-caption-text { font-size:.8em; font-style:italic; margin:.6em 0 -.2em; }
+		
+		/* misc styles */
+		.wp-smiley { margin: 0 !important; max-height: 1em; }
+	}
+}

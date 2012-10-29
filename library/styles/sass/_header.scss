@@ -1,0 +1,216 @@
+/******************************************************************
+HEADER STYLES
+******************************************************************/
+$header-h: 83px;
+
+#site-header { 
+	height: $header-h;
+	position: relative;
+	z-index: 999;
+
+	background-color: $dark-gray; // <-- Old IE
+	@include background(
+		image-url("transparent-noise.png") repeat,
+		linear-gradient(#434343, #2b2b2b)
+	);
+	@include box-shadow(0 1px 1px rgba(black, 0.3));
+}
+
+#inner-header { 
+	position: relative; 
+	height: $header-h;
+}
+
+#logo {
+	float: left;
+	height: 100%;
+	width: 148px;
+	text-align: center;
+
+	@include squish-text();
+	background: image-url('icons/8dio-logo.png') no-repeat center center;
+	@include horizontal-shadow();
+}
+
+#navigation {
+	float: right;
+	margin-left: 30px;
+	
+	font-family: $font-normal;
+	font-size: 15px;
+	line-height: $header-h + 3;
+	color: $menu-item-color;
+	text-transform: uppercase;
+
+	ul.menu {
+		> li {
+			float: left;
+			display: block;
+			height: $header-h;
+			
+			&:first-child { margin-left: 0; }
+			
+			a { 
+				display: block;
+				width: 100%; height: 100%;
+				padding: 0 12px;
+				
+				text-decoration: none;
+				color: inherit; 
+			}
+
+			ul.sub-menu {
+				display: none;
+				position: absolute;
+				background: $dark-gray;
+				
+				@extend .animated;
+				@include experimental(animation-duration, 0.4s);
+
+				li {
+					position: relative;
+					font-size: 14px;
+					line-height: 1.4em;
+					padding: 6px 18px 5px 8px;
+					
+					@extend .animated;
+					@include experimental(animation-duration, 0.3s);
+
+					&:hover { 
+						background: darken($dark-gray, 5%); 
+					}
+
+					&:not(.has-submenu):hover {
+						@extend .pulse;
+					}
+				}
+
+				ul.sub-menu {
+					position: absolute;
+					top: 3px; left: 100%;
+				}
+			}
+
+			> ul.sub-menu { padding: 4px 0 8px; }
+
+			&:hover, &.current-menu-item, &.current-menu-ancestor { color: $active-menu-item-color; }
+		}
+
+		// 1st level sub-menu
+		> li.has-submenu:hover {
+				color: $menu-item-color;
+				background: $dark-gray;
+
+				> ul.sub-menu {
+					display: block;
+					@extend .fadeInDown;
+				}
+			}
+
+		// 2-through-infinity level sub-menu
+		> li.has-submenu ul li.has-submenu:hover {
+			> ul.sub-menu { 
+				margin-top: -3px;
+				display: block; 
+				@extend .fadeInLeft; 
+			}
+		}
+	}	
+}
+
+#social-profiles {
+	display: none; // <-- Made visible by media query when width > 1024
+	float: right;
+	margin-left: 23px;
+	padding-left: 30px;
+	height: 100%;
+
+	@include horizontal-shadow(18px, false);
+	
+	ul {
+		height: 100%;
+
+		li {
+			float: left;
+			display: block;
+			height: 100%;
+			width: auto; height: 100%;
+
+
+			a { 
+				position: relative;
+				@include squish-text();
+				display: block;
+				opacity: 0.8;
+				width: auto; height: 100%;
+				padding: 0 9px;
+				
+				@extend .animated;
+				@include experimental(animation-duration, 0.8);
+				@include transition(all 0.2s ease-out);
+
+				&:hover { opacity: 1; @extend .bounce; }
+
+				&:after { 
+					content: '';
+					position: relative;
+					display: block;
+					margin: 0 auto;
+					top: 50%;
+				}
+
+				&.twitter:after { margin-top: -4px; @include ui-sprite('twitter-icon', true); }
+				&.facebook:after { margin-top: -5px; @include ui-sprite('facebook-icon', true); }
+				&.soundcloud:after { margin-top: -3px; @include ui-sprite('soundcloud-icon', true); }
+				&.youtube:after { margin-top: -8px; @include ui-sprite('youtube-icon', true); }
+			}
+		}
+	}
+}
+
+
+body.browser-chrome, body.browser-safari {
+	#social-profiles ul li a {
+		&.soundcloud {
+			$on: 100%; $off: 0%;
+			
+			-webkit-filter: unquote('grayscale(#{$on})');
+			
+			&:after { @include ui-sprite('soundcloud-icon-color', true); }
+			&:hover { -webkit-filter: unquote('grayscale(#{$off})'); }
+		}
+	}
+}
+
+#view-cart {
+	float: right;
+	position: relative;
+	display: block;
+	width: 91px; height: 100%;
+	margin-left: 23px;
+	
+	color: white;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 10px;
+	line-height: $header-h * 1.4;
+	
+	background: $brand-red image-url('transparent-noise.png') repeat;
+
+	@include horizontal-shadow(18px, false);
+
+	&:before {
+		display: block;
+		position: absolute;
+		top: 30%; left: 50%;
+		margin-left: 0 - image-width('sprites/ui/cart.png') / 2;
+		@include ui-sprite('cart', true);
+		content: '';
+	}
+
+	&:hover { background-color: lighten($brand-red, 3%); }
+}
+	
+/******************************************************************
+NAVIGATION STYLES
+******************************************************************/

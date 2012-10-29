@@ -75,14 +75,14 @@
 		//	Footer message
 		add_filter('admin_footer_text', 'modify_footer_admin');
 		function modify_footer_admin () {
-			echo 'Made with love by <a href="http://ahrengot.com" target="_blank">Jens Ahrengot Boddum</a>';
+			echo 'Made with love by <a href="http://openminded.dk" target="_blank">Openminded</a> and <a href="http://ahrengot.com" target="_blank">Jens Ahrengot Boddum</a>';
 		}
 		
 		//	Openminded logo for the log-in screen
 		add_action('login_head', 'custom_login_logo');
 		function custom_login_logo() {
 		  echo '<style type="text/css">
-		    		h1 a { background-image:url('.get_bloginfo('template_directory').'/library/img/icons/login-logo.png) !important; }
+		    		h1 a { background-image:url('.get_bloginfo('template_directory').'/library/styles/img/icons/login-logo.png) !important; }
 		    	</style>';
 		}
 	

@@ -1,0 +1,64 @@
+/* ==|== non-semantic helper classes ========================================
+   Please define your styles before this section.
+   ========================================================================== */
+
+/* floats */
+.left { float: left; }
+.right { float: right; }
+
+/* text alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Columns */
+.one-half { width: 49%; }
+.one-third { width: 32.66%; }
+.two-third { width: 65.33%; }
+.one-fourth { width: 24.5%; }
+.three-fourth { width: 74%; }
+.one-fifth { width: 16.8%; }
+.two-fifth { width: 37.6%; }
+.three-fifth { width: 58.4%; }
+.four-fifth { width: 67.2%; }
+.one-sixth { width: 13.33%; }
+.five-sixth { width: 82.67%; }
+
+.one-half,
+.one-third,
+.two-third,
+.three-fourth,
+.one-fourth,
+.one-fifth,
+.two-fifth,
+.three-fifth,
+.four-fifth,
+.one-sixth,
+.five-sixth {
+	position: relative;
+	margin-right: 1%;
+	float: left;
+}
+
+.column-last { margin-right: 0 !important; clear: right; }
+
+/* For image replacement */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* Hide from both screenreaders and browsers: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* Hide only visually, but have it available for screenreaders: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible { visibility: hidden; }
+
+/* Contain floats: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }

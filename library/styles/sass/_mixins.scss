@@ -1,0 +1,27 @@
+@mixin responsive-grid-item($size, $ratio: 1.2) {
+	position: relative;
+	float: left;
+	height: 0;
+	
+	width: $size; padding-bottom: $size * $ratio;
+	&.highlighted { width: $size * 2; padding-bottom: (($size * 2) * $ratio) - 0.05; }
+}
+
+@mixin horizontal-shadow($size: 18px, $after: true) {
+	position: relative;
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: $size;
+		top: 0; bottom: 0; 
+
+		@if $after {
+			right: -$size;
+		} @else {
+			left: 0;
+		}
+		
+		@include background-image(linear-gradient(left, rgba(black, 0.12), transparent));
+	}
+}

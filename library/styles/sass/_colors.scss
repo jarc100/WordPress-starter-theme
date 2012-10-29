@@ -1,0 +1,26 @@
+// Base color scheme
+$header-color: #4a4a4a;
+$text-color: #444;
+
+$light-gray: #e5e5e5;
+$dark-gray: #363636;
+
+$brand-red: #c80000;
+
+// Links
+$link-color: #b00002;
+$link-hover-color: lighten(#b00002, 10%);
+$touch-tap-color: #b00002;
+
+
+// Navigation
+$menu-item-color: #e6e6e6;
+$active-menu-item-color: #858585;
+
+// Other
+$select-color: white;
+$select-bg-color: $brand-red;
+
+$error-color: #B94A48;
+$success-color: #57A957;
+$warn-color: #EEDC94;

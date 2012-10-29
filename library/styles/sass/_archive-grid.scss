@@ -1,0 +1,25 @@
+/******************************************************************
+RESPONSIVE GRID ARCHIVE
+******************************************************************/
+
+
+.responsive-grid {
+	@extend .clearfix;
+	clear: both;
+
+	.grid-item-container {
+		@include responsive-grid-item(25%);
+
+		.grid-item {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			left: 0;
+
+			#{headers()} { 
+				color: white; 
+				text-align: center;
+			}
+		}
+	}
+}
